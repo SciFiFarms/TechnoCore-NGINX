@@ -1,0 +1,9 @@
+upstream mqtt_cluster {
+    server mqtt:1883;
+}
+
+server {
+    listen 1883; # MQTT port
+    proxy_pass mqtt_cluster;
+}
+    
